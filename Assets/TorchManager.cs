@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TorchManager : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class TorchManager : MonoBehaviour
     public GameObject[] Torchs;
 
   private int currentTorch = 0;
+
+  public delegate void OnTorchChanged(int torch);
+  public static OnTorchChanged onTorchChanged;
 
   // Start is called before the first frame update
   void Start()
@@ -20,7 +25,7 @@ public class TorchManager : MonoBehaviour
         Torchs[1].SetActive(false);
       if (Torchs[2] != null && Torchs[2].active)
         Torchs[2].SetActive(false);
-
+      onTorchChanged.Invoke(0);
     }
   }
 
@@ -36,7 +41,13 @@ public class TorchManager : MonoBehaviour
           currentTorch = 0;
       Torchs[currentTorch].transform.position = pos;
       Torchs[currentTorch].SetActive(true);
-        
+      onTorchChanged.Invoke(currentTorch);
+
       }
     }
+
+  public int GetCurrentTorchNumber()
+  {
+    return currentTorch;
+  }
 }
