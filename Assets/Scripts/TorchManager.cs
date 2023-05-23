@@ -11,8 +11,8 @@ public class TorchManager : MonoBehaviour
 
   private int currentTorch = 0;
 
-  public delegate void OnTorchChanged(int torch);
-  public static OnTorchChanged onTorchChanged;
+  //public delegate void OnTorchChanged(int torch);
+  //public static OnTorchChanged onTorchChanged;
 
   // Start is called before the first frame update
   void Start()
@@ -25,7 +25,7 @@ public class TorchManager : MonoBehaviour
         Torchs[1].SetActive(false);
       if (Torchs[2] != null && Torchs[2].active)
         Torchs[2].SetActive(false);
-      onTorchChanged.Invoke(0);
+      //onTorchChanged.Invoke(0);
     }
   }
 
@@ -41,7 +41,7 @@ public class TorchManager : MonoBehaviour
           currentTorch = 0;
       Torchs[currentTorch].transform.position = pos;
       Torchs[currentTorch].SetActive(true);
-      onTorchChanged.Invoke(currentTorch);
+      //onTorchChanged.Invoke(currentTorch);
 
       }
     }
