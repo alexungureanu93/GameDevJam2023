@@ -48,4 +48,9 @@ public class CharacterController2D : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, 0.1f);
     }
+
+        public void Die()
+    {
+        Destroy(gameObject);
+    }
 }
