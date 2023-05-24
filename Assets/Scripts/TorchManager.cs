@@ -11,6 +11,8 @@ public class TorchManager : MonoBehaviour
 
   private int currentTorch = 0;
 
+  private Animator animator;
+
   //public delegate void OnTorchChanged(int torch);
   //public static OnTorchChanged onTorchChanged;
 
@@ -27,24 +29,28 @@ public class TorchManager : MonoBehaviour
         Torchs[2].SetActive(false);
       //onTorchChanged.Invoke(0);
     }
+    animator = GetComponentInChildren<Animator>();
   }
 
   // Update is called once per frame
   void Update()
+  {
+    if (Input.GetButtonDown("Fire2"))
     {
-      if (Input.GetButtonDown("Fire1"))
-      {
-        Torchs[currentTorch].SetActive(false);
+      Torchs[currentTorch].SetActive(false);
       var pos = Torchs[currentTorch].transform.position;
-        currentTorch++;
-        if (currentTorch > 2)
-          currentTorch = 0;
+      currentTorch++;
+      if (currentTorch > 2)
+        currentTorch = 0;
       Torchs[currentTorch].transform.position = pos;
       Torchs[currentTorch].SetActive(true);
       //onTorchChanged.Invoke(currentTorch);
 
-      }
     }
+    if (Input.GetButtonDown("Fire1")) { 
+      animator.SetTrigger("attack");
+    }
+  }
 
   public int GetCurrentTorchNumber()
   {
