@@ -128,6 +128,16 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60a1b310d69b2640bb5beb0c676d12e
+      internalID: -805591522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
