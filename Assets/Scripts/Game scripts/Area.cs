@@ -9,7 +9,7 @@ public class Area : MonoBehaviour
         Eatworm eatworm = collision.GetComponent<Eatworm>();
         if (eatworm != null)
         {
-            eatworm.StartPatrol();
+            //eatworm.StartPatrol();
         }
     }
 
@@ -18,7 +18,7 @@ public class Area : MonoBehaviour
         Eatworm eatworm = collision.GetComponent<Eatworm>();
         if (eatworm != null)
         {
-            eatworm.StopPatrol();
+            //eatworm.StopPatrol();
         }
     }
 }

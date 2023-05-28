@@ -10,14 +10,15 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth;
 
     private bool canTakeDamage = true;
-    private float damageCooldown = 3f;
+    private float damageCooldown = 0.5f;
     public CharacterController2D Character;
 
     private void Start()
     {
         slider.maxValue = maxHealth;
-        slider.value = health;
-    }
+        slider.value = Health.Instance.PLAYER_HP;
+        health = Health.Instance.PLAYER_HP;
+  }
 
     private void Update()
     {
@@ -33,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
         if (canTakeDamage)
         {
             health -= damage;
+            Health.Instance.PLAYER_HP = health;
             StartCoroutine(StartDamageCooldown());
         }
     }

@@ -42,6 +42,17 @@ public class PauseMenu : MonoBehaviour
     }
     public void QuitGame()
     {
-     Debug.Log("QuitGame");
+
+    LevelManager.Instance.LoadTitle();
+
+    Debug.Log("QuitGame");
     }
+
+  public void LoadTutorial()
+  {
+
+    LevelManager.Instance.LoadTutorial();
+
+    Debug.Log("QuitGame");
+  }
 }

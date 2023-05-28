@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    [SerializeField] int target;
+    [SerializeField] public int target;
     [SerializeField] bool hasNext = false;
     [SerializeField] FunkyCode.Light2D Light2D;
     [SerializeField] Color defaultColor = Color.red;

@@ -40,4 +40,17 @@ public class LevelManager : MonoBehaviour
       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+  public void LoadTutorial()
+  {
+    SceneManager.LoadScene(1);
+  }
+
+  public void LoadTitle()
+  {
+    SceneManager.LoadScene(0);
+  }
+  public void LoadGameOver()
+  {
+    SceneManager.LoadScene("ThreeTorchsGameOver");
+  }
 }

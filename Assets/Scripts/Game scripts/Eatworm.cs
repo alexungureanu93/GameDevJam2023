@@ -3,16 +3,16 @@ using System.Collections;
 
 public class Eatworm : MonoBehaviour
 {
-    public float patrolSpeed = 2f;
-    public float chaseSpeed = 4f;
+    //public float patrolSpeed = 2f;
+    //public float chaseSpeed = 4f;
     public float chaseRange = 5f;
-    public float attackDelay = 1f;
+    //public float attackDelay = 0.2f;
 
     private Transform player;
-    private Vector3 startingPosition;
-    private bool isChasing = false;
-    private bool isAttacking = false;
-    private bool isPatrolling = false;
+    //private Vector3 startingPosition;
+    //private bool isChasing = false;
+    //private bool isAttacking = false;
+    //private bool isPatrolling = false;
 
     public PlayerHealth playerHealth;
     public PatrolEatworm patrolEatworm;
@@ -21,9 +21,9 @@ public class Eatworm : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        startingPosition = transform.position;
+        //startingPosition = transform.position;
         patrolEatworm = GetComponent<PatrolEatworm>();
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -32,71 +32,74 @@ public class Eatworm : MonoBehaviour
 
         if (distanceToPlayer <= chaseRange)
         {
-            isChasing = true;
-            isAttacking = false;
-            StopPatrol();
-        }
-        else if (distanceToPlayer > chaseRange + 1f)
-        {
-            isChasing = false;
-            isAttacking = false;
-            StartPatrol();
-        }
+      //isChasing = true;
+      //isAttacking = false;
+      //StopPatrol();
+      playerHealth.TakeDamage(5);
 
-        if (isChasing)
-        {
-          StartCoroutine(AttackCoroutine());
+      //StartCoroutine(AttackCoroutine());
 
-          // ChasePlayer();
     }
-    else if (isPatrolling)
-        {
-            Patrol();
-        }
-    }
+    //else if (distanceToPlayer > chaseRange + 1f)
+    //    {
+    //        isChasing = false;
+    //        isAttacking = false;
 
-    private void Patrol()
+    //  //StartPatrol();
+    //}
+    Patrol();
+
+    //if (isChasing)
+    //    {
+
+    //      // ChasePlayer();
+    //}
+    //else if (isPatrolling)
+    //    {
+    //        Patrol();
+    //    }
+  }
+
+  private void Patrol()
     {
         patrolEatworm.Patrol();
     }
 
-    private void ChasePlayer()
-    {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    //private void ChasePlayer()
+    //{
+    //    Vector3 direction = player.position - transform.position;
+    //    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    //    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        rb.velocity = direction.normalized * chaseSpeed;
+    //    rb.velocity = direction.normalized * chaseSpeed;
 
-        if (!isAttacking)
-        {
-        }
-    }
+    //    if (!isAttacking)
+    //    {
+    //    }
+    //}
 
-    private IEnumerator AttackCoroutine()
-    {
-        isAttacking = true;
+    //private IEnumerator AttackCoroutine()
+    //{
+    //    isAttacking = true;
 
-        // animation
+    //// animation
 
-        yield return new WaitForSeconds(attackDelay);
 
-        playerHealth.TakeDamage(5);
+    //yield return new WaitForSeconds(attackDelay);
 
-        yield return new WaitForSeconds(attackDelay);
 
-        isAttacking = false;
-    }
+    //    isAttacking = false;
+    //}
 
-    public void StartPatrol()
-    {
-        isPatrolling = true;
-        rb.velocity = Vector2.zero;
-    }
+    //public void StartPatrol()
+    //{
+    //    isPatrolling = true;
+    //    rb.velocity = Vector2.zero;
+    //}
 
-    public void StopPatrol()
-    {
-        isPatrolling = false;
-        rb.velocity = Vector2.zero;
-    }
+    //public void StopPatrol()
+    //{
+    //    isPatrolling = false;
+    //    rb.velocity = Vector2.zero;
+    //}
 }

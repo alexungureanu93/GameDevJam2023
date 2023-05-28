@@ -51,6 +51,7 @@ public class CharacterController2D : MonoBehaviour
 
         public void Die()
     {
-        Destroy(gameObject);
+
+    LevelManager.Instance.LoadGameOver();
     }
 }
