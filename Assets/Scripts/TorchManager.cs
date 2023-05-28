@@ -15,13 +15,15 @@ public class TorchManager : MonoBehaviour
 
   public CharacterController2D characterController2D;
 
+  public bool torchActive = true;
+
   //public delegate void OnTorchChanged(int torch);
   //public static OnTorchChanged onTorchChanged;
 
   // Start is called before the first frame update
   void Start()
     {
-    if (Torchs.Length == 3)
+    if (Torchs.Length == 3 && torchActive)
     {
       if (Torchs[0] != null && !Torchs[0].active)
         Torchs[0].SetActive(true);
@@ -37,6 +39,8 @@ public class TorchManager : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    if (!torchActive)
+      return;
     if (Input.GetButtonDown("Fire2"))
     {
       Torchs[currentTorch].SetActive(false);
