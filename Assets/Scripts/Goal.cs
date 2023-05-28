@@ -5,18 +5,18 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     [SerializeField] int target;
+    [SerializeField] bool hasNext = false;
+    [SerializeField] FunkyCode.Light2D Light2D;
     [SerializeField] Color defaultColor = Color.red;
     [SerializeField] Color unlockColor = Color.blue;
     
-    SpriteRenderer spriteRenderer;
     Wallet playerWallet;
 
     bool isUnlocked;
 
     void Awake() 
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = defaultColor;
+        Light2D.color = defaultColor;
         playerWallet = FindObjectOfType<Wallet>();
     }
 
@@ -26,7 +26,7 @@ public class Goal : MonoBehaviour
         if(playerWallet.GetCoins() >= target)
         {
             isUnlocked = true;
-            spriteRenderer.color = unlockColor;
+            Light2D.color = unlockColor;
         }
     }
 
@@ -36,7 +36,10 @@ public class Goal : MonoBehaviour
         if (other.GetComponent<Wallet>() == playerWallet)
         {
             if(isUnlocked) {
-                LevelManager.Instance.ReloadLevel();
+                if(hasNext)
+                  LevelManager.Instance.NextLevel();
+                else
+                  LevelManager.Instance.ReloadLevel();
             }
         }
     }

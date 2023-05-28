@@ -25,10 +25,20 @@ public class PatrolEatworm : MonoBehaviour
 
     public void Patrol()
     {
-        Vector2 direction = (currentTarget.position - transform.position).normalized;
+        Vector2 direction = (new Vector3(currentTarget.position.x,transform.position.y,transform.position.z) - transform.position).normalized;
         rb.velocity = direction * moveSpeed;
 
-        if (Vector2.Distance(transform.position, currentTarget.position) < 0.1f)
+        if (rb.velocity.x > 0)
+        {
+          transform.localScale = (new Vector3(1, 1, 1));
+        }
+        else
+        {
+          transform.localScale = (new Vector3(-1, 1, 1));
+
+        }
+
+    if (Vector2.Distance(transform.position, currentTarget.position) < 0.1f)
         {
             SetNextPatrolPoint();
         }

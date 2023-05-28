@@ -12,6 +12,10 @@ public class CheckMovement : MonoBehaviour
   bool jumping = true;
   bool falling = true;
 
+  public AudioSource step;
+  public AudioSource jump;
+  public AudioSource land;
+
   // Start is called before the first frame update
   void Start()
     {
@@ -35,6 +39,8 @@ public class CheckMovement : MonoBehaviour
               transform.localScale = (new Vector3(-1, 1, 1));
 
           }
+          if (!step.isPlaying && !jumping && !falling)
+            step.Play();
         }
         else
         {
@@ -45,6 +51,8 @@ public class CheckMovement : MonoBehaviour
         {
           jumping = true;
           animator.SetTrigger("jumping");
+          if (!jump.isPlaying)
+            jump.Play();
         } 
         else if (!falling && rb.velocity.y < -0.1)
         {
@@ -56,6 +64,7 @@ public class CheckMovement : MonoBehaviour
           animator.SetTrigger("onfloor");
           jumping = false;
           falling = false;
+          land.Play();  
         }
 
   }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other) 
+  public GameObject ExplosionPrefab;
+
+  void OnTriggerEnter2D(Collider2D other) 
     {
         //Add the coin to the player wallet when collectd
         Wallet wallet = other.GetComponent<Wallet>();
@@ -12,6 +14,8 @@ public class Pickup : MonoBehaviour
         {
             wallet.IncrementCoins();
             Destroy(gameObject);
-        }
+          Instantiate(ExplosionPrefab, other.transform.position, other.transform.rotation);
+
     }
+  }
 }

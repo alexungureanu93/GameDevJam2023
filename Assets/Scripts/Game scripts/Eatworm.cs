@@ -45,9 +45,11 @@ public class Eatworm : MonoBehaviour
 
         if (isChasing)
         {
-            ChasePlayer();
-        }
-        else if (isPatrolling)
+          StartCoroutine(AttackCoroutine());
+
+          // ChasePlayer();
+    }
+    else if (isPatrolling)
         {
             Patrol();
         }
@@ -68,7 +70,6 @@ public class Eatworm : MonoBehaviour
 
         if (!isAttacking)
         {
-            StartCoroutine(AttackCoroutine());
         }
     }
 

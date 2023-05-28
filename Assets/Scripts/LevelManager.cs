@@ -30,17 +30,14 @@ public class LevelManager : MonoBehaviour
         }
     }
     #endregion
-
-    PlayerController player;
-
-    void Start()
-    {
-        player = FindObjectOfType<PlayerController>();
-    }
-
+  
     public void ReloadLevel()
     {
-        player.isActive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    public void NextLevel()
+    {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
 }

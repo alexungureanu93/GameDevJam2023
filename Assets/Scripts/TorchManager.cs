@@ -13,6 +13,8 @@ public class TorchManager : MonoBehaviour
 
   private Animator animator;
 
+  public CharacterController2D characterController2D;
+
   //public delegate void OnTorchChanged(int torch);
   //public static OnTorchChanged onTorchChanged;
 
@@ -46,6 +48,21 @@ public class TorchManager : MonoBehaviour
       Torchs[currentTorch].SetActive(true);
       //onTorchChanged.Invoke(currentTorch);
 
+      if (currentTorch == 0)
+      {
+        characterController2D.moveSpeed = 8f;
+        characterController2D.jumpForce= 20f;
+      }
+      if (currentTorch == 1)
+      {
+        characterController2D.moveSpeed = 6f;
+        characterController2D.jumpForce = 15f;
+      }
+      if (currentTorch == 2)
+      {
+        characterController2D.moveSpeed = 4f;
+        characterController2D.jumpForce = 10f;
+      }
     }
     if (Input.GetButtonDown("Fire1")) { 
       animator.SetTrigger("attack");
