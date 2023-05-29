@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   patrolEatworm: {fileID: 5698718082017456528}
+  hp: 3
 --- !u!114 &5698718082017456528
 MonoBehaviour:
   m_ObjectHideFlags: 0
