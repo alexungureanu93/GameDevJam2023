@@ -20,7 +20,7 @@ public class Ranger : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 1) 
+        if(timer > 2) 
         {
             timer = 0;
             Shoot();
