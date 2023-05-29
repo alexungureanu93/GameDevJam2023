@@ -9,12 +9,19 @@ public class Health : MonoBehaviour
   static Health instance;
   public static Health Instance { get { return instance; } }
 
+  public bool isTutorial = false;
+
   protected virtual void Awake()
   {
     if (instance != null)
     {
-      Debug.LogErrorFormat("[Singleton] Trying to instantiate a second instance of singleton class {0} from {1}", GetType().Name, this.gameObject.name);
+      if (isTutorial)
+        instance.PLAYER_HP = 100;
+      else
+        Debug.LogWarningFormat("[Singleton] Trying to instantiate a second instance of singleton class {0} from {1}", GetType().Name, this.gameObject.name);
+
       Destroy(this.gameObject);
+      
     }
     else
     {
