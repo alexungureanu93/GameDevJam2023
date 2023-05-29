@@ -51,6 +51,15 @@ public class LevelManager : MonoBehaviour
   }
   public void LoadGameOver()
   {
+    if (MusicMain.Instance != null)
+      Destroy(MusicMain.Instance.gameObject);
     SceneManager.LoadScene("ThreeTorchsGameOver");
+  }
+
+  public void LoadCongrats()
+  {
+    if(MusicMain.Instance != null)
+      Destroy(MusicMain.Instance.gameObject);
+    SceneManager.LoadScene("ThreeTorchsEnd");
   }
 }

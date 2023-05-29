@@ -22,8 +22,18 @@ public class HitEnemy : MonoBehaviour
   {
     if (collision.gameObject.tag == "Enemy")
     {
-      Destroy(collision.gameObject);
-      Instantiate(ExplosionPrefab,collision.transform.position, collision.transform.rotation);
+      Eatworm eatworm = collision.gameObject.GetComponent<Eatworm>();
+      if(eatworm  != null)
+      {
+        eatworm.hp--;
+        if (eatworm.hp <= 0)
+        {
+          Destroy(collision.gameObject);
+          Instantiate(ExplosionPrefab, collision.transform.position, collision.transform.rotation);
+
+        }
+
+      }
     }
   }
 }

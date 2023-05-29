@@ -5,7 +5,7 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     [SerializeField] public int target;
-    [SerializeField] bool hasNext = false;
+    [SerializeField] bool isLast = false;
     [SerializeField] FunkyCode.Light2D Light2D;
     [SerializeField] Color defaultColor = Color.red;
     [SerializeField] Color unlockColor = Color.blue;
@@ -36,10 +36,10 @@ public class Goal : MonoBehaviour
         if (other.GetComponent<Wallet>() == playerWallet)
         {
             if(isUnlocked) {
-                if(hasNext)
-                  LevelManager.Instance.NextLevel();
+                if(isLast)
+                  LevelManager.Instance.LoadCongrats();
                 else
-                  LevelManager.Instance.ReloadLevel();
+                  LevelManager.Instance.NextLevel();
             }
         }
     }

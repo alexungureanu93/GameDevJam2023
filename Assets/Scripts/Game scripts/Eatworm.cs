@@ -18,6 +18,8 @@ public class Eatworm : MonoBehaviour
     public PatrolEatworm patrolEatworm;
     private Rigidbody2D rb;
 
+  public int hp = 1;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;

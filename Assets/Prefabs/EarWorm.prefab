@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbd4047279de4bf4cb65b39b50a7683e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 5
   playerHealth: {fileID: 0}
   patrolEatworm: {fileID: 5698718082017456528}
+  hp: 2
 --- !u!114 &5698718082017456528
 MonoBehaviour:
   m_ObjectHideFlags: 0

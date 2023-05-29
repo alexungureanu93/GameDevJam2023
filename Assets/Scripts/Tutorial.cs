@@ -8,6 +8,7 @@ public class Tutorial : MonoBehaviour
   public TorchManager torchManager;
   public GameObject tutorialBlock;
   public GameObject message;
+  public GameObject music;
 
   // Start is called before the first frame update
   void Start()
@@ -25,6 +26,7 @@ public class Tutorial : MonoBehaviour
   {
     if (torchManager.torchActive)
     {
+      music.SetActive(true);
       tutorialBlock.SetActive(false);
     }
     else
