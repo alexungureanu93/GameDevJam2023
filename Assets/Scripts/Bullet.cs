@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private GameObject player;
+    public PlayerHealth health;
     private Rigidbody2D myRb;
     private float force =10f;
     private float timer;
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) 
         {
+            health.TakeDamage(5);
             Destroy(gameObject);
         }
 

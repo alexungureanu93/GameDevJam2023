@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Ranger : MonoBehaviour
 {
+    public PlayerHealth health;
     public GameObject bullet;
     public Transform bulletPos;
     private GameObject player;
@@ -21,7 +22,6 @@ public class Ranger : MonoBehaviour
     void Update()
     {
         float distance= Vector2.Distance(transform.position,player.transform.position);
-
         if (distance < 8)
         {
             timer += Time.deltaTime;
@@ -36,5 +36,13 @@ public class Ranger : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet,bulletPos.position,Quaternion.identity);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            health.TakeDamage(5);
+        }
+
     }
 }
