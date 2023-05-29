@@ -16,6 +16,7 @@ public class TorchManager : MonoBehaviour
   public CharacterController2D characterController2D;
 
   public bool torchActive = true;
+  public AudioSource attackSound;
 
   //public delegate void OnTorchChanged(int torch);
   //public static OnTorchChanged onTorchChanged;
@@ -68,7 +69,9 @@ public class TorchManager : MonoBehaviour
         characterController2D.jumpForce = 10f;
       }
     }
-    if (Input.GetButtonDown("Fire1")) { 
+    if (Input.GetButtonDown("Fire1")) {
+      if(!attackSound.isPlaying)
+        attackSound.Play();
       animator.SetTrigger("attack");
     }
   }

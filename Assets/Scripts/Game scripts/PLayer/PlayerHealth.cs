@@ -12,8 +12,9 @@ public class PlayerHealth : MonoBehaviour
     private bool canTakeDamage = true;
     private float damageCooldown = 0.5f;
     public CharacterController2D Character;
+    public AudioSource HitSound;
 
-    private void Start()
+  private void Start()
     {
         slider.maxValue = maxHealth;
         slider.value = Health.Instance.PLAYER_HP;
@@ -33,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (canTakeDamage)
         {
+
+            HitSound.Play();
             health -= damage;
             Health.Instance.PLAYER_HP = health;
             StartCoroutine(StartDamageCooldown());

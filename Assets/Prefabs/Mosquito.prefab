@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 0}
   patrolEatworm: {fileID: 5698718082017456528}
+  isMosquito: 1
   hp: 1
 --- !u!114 &5698718082017456528
 MonoBehaviour:
@@ -247,7 +248,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.030231476, y: 0.1875363}
+  m_Offset: {x: 0.030231476, y: 0.14976883}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -258,5 +259,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0580215, y: 1.8945616}
+  m_Size: {x: 2.0580215, y: 1.9700966}
   m_EdgeRadius: 0

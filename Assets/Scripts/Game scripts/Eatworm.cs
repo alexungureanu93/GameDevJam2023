@@ -17,6 +17,7 @@ public class Eatworm : MonoBehaviour
     public PlayerHealth playerHealth;
     public PatrolEatworm patrolEatworm;
     private Rigidbody2D rb;
+  public bool isMosquito = false;
 
   public int hp = 1;
 
@@ -32,7 +33,7 @@ public class Eatworm : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= chaseRange)
+        if (distanceToPlayer <= chaseRange  + (isMosquito? 0.5:0))
         {
       //isChasing = true;
       //isAttacking = false;
