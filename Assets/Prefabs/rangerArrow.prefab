@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8734597165141781232}
   m_Layer: 0
   m_Name: rangerArrow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44feca8d1ca12744eb136345736cc9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
 --- !u!61 &-8734597165141781232
 BoxCollider2D:
   m_ObjectHideFlags: 0

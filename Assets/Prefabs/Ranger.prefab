@@ -98,6 +98,7 @@ MonoBehaviour:
   health: {fileID: 0}
   bullet: {fileID: 4171726047462489169, guid: 926e9d7294fd02c42862c6c0e6c4d10c, type: 3}
   bulletPos: {fileID: 6703401119923701953}
+  hp: 2
 --- !u!1 &6703401119923701958
 GameObject:
   m_ObjectHideFlags: 0

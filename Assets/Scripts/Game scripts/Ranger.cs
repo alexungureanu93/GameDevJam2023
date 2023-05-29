@@ -9,6 +9,7 @@ public class Ranger : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
     private GameObject player;
+    public int hp = 1;
 
     private float timer;
 
@@ -25,7 +26,7 @@ public class Ranger : MonoBehaviour
         if (distance < 8)
         {
             timer += Time.deltaTime;
-            if (timer > 2)
+            if (timer > 5)
             {
                 timer = 0;
                 Shoot();
@@ -41,7 +42,7 @@ public class Ranger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            health.TakeDamage(5);
+            health.TakeDamage(20);
         }
 
     }
