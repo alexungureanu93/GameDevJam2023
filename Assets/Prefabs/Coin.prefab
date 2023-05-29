@@ -115,3 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExplosionPrefab: {fileID: 2869523129187621682, guid: dd43206f42156ee478369a60d84ef892, type: 3}
+  CollectPrefab: {fileID: 8675038512544671706, guid: 5662d6974a00d504687c603a9832d4bc, type: 3}
