@@ -5,7 +5,7 @@ public class Eatworm : MonoBehaviour
 {
     //public float patrolSpeed = 2f;
     //public float chaseSpeed = 4f;
-    public float chaseRange = 5f;
+    private float chaseRange = 2f;
     //public float attackDelay = 0.2f;
 
     private Transform player;
