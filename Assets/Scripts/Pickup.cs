@@ -5,7 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     public GameObject ExplosionPrefab;
-    public AudioClip destroySound;
+    public GameObject collectPrefab;
 
   void OnTriggerEnter2D(Collider2D other) 
     {
@@ -14,9 +14,9 @@ public class Pickup : MonoBehaviour
         if(wallet != null)
         {
             wallet.IncrementCoins();
-            AudioSource.PlayClipAtPoint(destroySound, transform.position);
             Destroy(gameObject);
           Instantiate(ExplosionPrefab, other.transform.position, other.transform.rotation);
+        Instantiate(collectPrefab, other.transform.position, other.transform.rotation);
 
     }
   }
