@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,12 +47,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,10 +129,50 @@ TextureImporter:
     serializedVersion: 2
     sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: 8, y: -24}
+      - {x: 8, y: -26}
+      - {x: 16, y: -26}
+      - {x: 16, y: -28}
+      - {x: 26, y: -28}
+      - {x: 26, y: -26}
+      - {x: 28, y: -26}
+      - {x: 28, y: -22}
+      - {x: 26, y: -22}
+      - {x: 26, y: -20}
+      - {x: 22, y: -20}
+      - {x: 22, y: -16}
+      - {x: 20, y: -16}
+      - {x: 20, y: -14}
+      - {x: 16, y: -14}
+      - {x: 16, y: -10}
+      - {x: 14, y: -10}
+      - {x: 14, y: -8}
+      - {x: 6, y: -8}
+      - {x: 6, y: -6}
+      - {x: -6, y: -6}
+      - {x: -6, y: -8}
+      - {x: -14, y: -8}
+      - {x: -14, y: -10}
+      - {x: -16, y: -10}
+      - {x: -16, y: -14}
+      - {x: -20, y: -14}
+      - {x: -20, y: -16}
+      - {x: -22, y: -16}
+      - {x: -22, y: -20}
+      - {x: -26, y: -20}
+      - {x: -26, y: -22}
+      - {x: -28, y: -22}
+      - {x: -28, y: -26}
+      - {x: -26, y: -26}
+      - {x: -26, y: -28}
+      - {x: -16, y: -28}
+      - {x: -16, y: -26}
+      - {x: -8, y: -26}
+      - {x: -8, y: -24}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
